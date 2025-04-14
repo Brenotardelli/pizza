@@ -1,10 +1,11 @@
 import React from "react";
+import "./index.css";
 
 const Header = () => {
   return (
-    <div>
+    <header className="header">
       <h1>Giro di Pizza</h1>
-    </div>
+    </header>
   );
 };
 
