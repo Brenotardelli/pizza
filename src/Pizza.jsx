@@ -55,13 +55,14 @@ const Pizza = () => {
   return (
     <div>
       <ul className="pizzas">
-        {pizzaData.map((produto) => (
-          <li className="pizza" key={produto.id}>
+        {pizzaData.map(({ id, name, ingredients, price, photoName, soldOut }) => (
+          <li className={`pizza ${soldOut ? "sold-out" : ""}`} key={id}>
             <div>
-              <h2>{produto.name}</h2>
-              <p>{produto.ingredients}</p>
-              <span>${produto.price}</span>
-              <img src={produto.photoName} alt={`Pizza photo ${produto.name}`} />
+              <h2>{name}</h2>
+              <p>{ingredients}</p>
+              {/* <span>${price}</span> */}
+              <img src={photoName} alt={`Pizza photo ${name}`} />
+              <span>{soldOut ? "SOLD OUT" : `$${price}`}</span>
             </div>
           </li>
         ))}
@@ -69,5 +70,5 @@ const Pizza = () => {
     </div>
   );
 };
-
+``
 export default Pizza;
